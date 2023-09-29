@@ -4,8 +4,8 @@ import java.net.URL;
 
 public class Upload {
     public static void main(String[] args) throws IOException {
-        String uploadUri = "<uploadUri>"; // replace with the uri that was received while creating content
-        String filePath = "<filepath>"; // replace with the path of the file to be uploaded
+        String uploadUri = "<uploadUri>"; // replace <uploadUri> with the uri that was received while creating content
+        String filePath = "<filepath>"; // replace <filepath> with the path of the file to be uploaded
 
         File file = new File(filePath);
         HttpURLConnection connection = (HttpURLConnection) new URL(uploadUri).openConnection();

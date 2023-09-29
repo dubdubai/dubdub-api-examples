@@ -4,8 +4,11 @@ import java.net.URL;
 
 public class Download {
     public static void main(String[] args) {
-        String url = "https://api.dubdub.ai/v1/dubbing/download_content/<content_id>?target_language=hi-IN&output_file=video"; // Replace with the content_id with required content_id
-        String outputPath = "<outputPath>"; // Path where you want to save the file. Use extension .mp4 for video and .wav for audio
+        String url = "https://api.dubdub.ai/v1/dubbing/download_content/<content_id>?target_language=<target_language>&output_file=<output_file>"; // Replace with the content_id with required content_id
+        // Also replace <target_language> with the required target_language code and <output_file> with required output_file type 
+        
+        String outputPath = "<outputPath>"; // Path where you want to save the file.
+        // Use extension .mp4 for video and .wav for audio types and .srt for srt
 
         try {
             URL urlObj = new URL(url);
@@ -13,7 +16,7 @@ public class Download {
 
             // Set up the connection
             connection.setRequestMethod("GET");
-            connection.setRequestProperty("api_key", "<api_key>"); // Replace with your api_key
+            connection.setRequestProperty("api_key", "<api_key>"); // Replace <api_key> with your api_key
 
             int responseCode = connection.getResponseCode();
 

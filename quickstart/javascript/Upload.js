@@ -1,8 +1,8 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const uploadUri = "<uploadUri>" // replace with the uri that was received while creating content
-const filePath = '<filePath>'; // replace with the path of the file to be uploaded
+const uploadUri = "<uploadUri>" // replace <uploadUri> with the uri that was received while creating content
+const filePath = '<filePath>'; // replace <filePath> with the path of the file to be uploaded
 
 
 fs.readFile(filePath, (err, data) => {
