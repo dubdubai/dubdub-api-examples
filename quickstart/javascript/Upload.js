@@ -1,8 +1,8 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const uploadUri = "<upload_uri>"
-const filePath = '/Users/unmeshkumar/Downloads/conv.mp4';
+const uploadUri = "<uploadUri>" // replace with the uri that was received while creating content
+const filePath = '<filePath>'; // replace with the path of the file to be uploaded
 
 
 fs.readFile(filePath, (err, data) => {
@@ -11,11 +11,7 @@ fs.readFile(filePath, (err, data) => {
        return;
    }
 
-   axios.put(uploadUri, data, {
-      headers: {
-          'Content-Type': 'video/mp4'
-            }
-      })
+   axios.put(uploadUri, data)
       .then(response => {
          console.log(response.status);
       })

@@ -2,10 +2,10 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class SaveVideoToFile {
+public class Download {
     public static void main(String[] args) {
-        String url = "https://api.dubdub.ai/v1/dubbing/download_content/<content_id>?target_language=hi-IN&output_file=video"; // Replace with your URL
-        String outputPath = "dubbed_output_of_beatiful.mp4"; // Replace with your desired file path
+        String url = "https://api.dubdub.ai/v1/dubbing/download_content/<content_id>?target_language=hi-IN&output_file=video"; // Replace with the content_id with required content_id
+        String outputPath = "<outputPath>"; // Path where you want to save the file. Use extension .mp4 for video and .wav for audio
 
         try {
             URL urlObj = new URL(url);
@@ -13,7 +13,7 @@ public class SaveVideoToFile {
 
             // Set up the connection
             connection.setRequestMethod("GET");
-            connection.setRequestProperty("api_key", "<api_key>");
+            connection.setRequestProperty("api_key", "<api_key>"); // Replace with your api_key
 
             int responseCode = connection.getResponseCode();
 

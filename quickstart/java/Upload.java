@@ -2,17 +2,15 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class FileUploadAudio {
+public class Upload {
     public static void main(String[] args) throws IOException {
-        String uploadUri = "<uploadUri>";
-        String filePath = "/Users/unmeshkumar/Downloads/vocab.mp3";
+        String uploadUri = "<uploadUri>"; // replace with the uri that was received while creating content
+        String filePath = "<filepath>"; // replace with the path of the file to be uploaded
 
         File file = new File(filePath);
         HttpURLConnection connection = (HttpURLConnection) new URL(uploadUri).openConnection();
         connection.setDoOutput(true);
         connection.setRequestMethod("PUT");
-        connection.setRequestProperty("Content-Type", "audio/mpeg");
-        connection.setRequestProperty("Content-Length", String.valueOf(file.length()));
 
         try (OutputStream os = connection.getOutputStream();
              FileInputStream fis = new FileInputStream(file)) {
